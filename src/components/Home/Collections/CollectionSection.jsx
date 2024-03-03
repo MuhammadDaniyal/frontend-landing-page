@@ -1,30 +1,28 @@
-import React from 'react'
-import CollectionCard from './CollectionCard';
-import { Collections } from '../../../data/Collections';
+import React from "react";
+import CollectionCard from "./CollectionCard";
+import { Collections } from "../../../data/Collections";
 
 const CollectionSection = () => {
-    return (
-        <div className=' flex flex-col gap-4 my-10'>
-            {/* HEADINGS SECTION */}
-            <div className=' text-center'>
-                <h2 className=' text-base text-[#BD9229]'>ATTRACTIVE JEWELLERY</h2>
-                <h1 className=' text-3xl text-[#404040]'>Gorgeous Collections</h1>
-            </div>
+  return (
+    <div className=" flex flex-col gap-4 my-10">
+      {/* HEADINGS SECTION */}
+      <div className=" flex flex-col gap-1 text-center">
+        <h4 className=" text-base text-primaryColor uppercase">
+          ATTRACTIVE JEWELLERY
+        </h4>
+        <h3 className=" text-4xl text-headingColor capitalize">
+          Gorgeous Collections
+        </h3>
+      </div>
 
-            {/* CARDS SECTION */}
-            <div className=' grid grid-cols-3'>
-                {
-                    Collections.map((item, i) => {
-                        return (
-                            <CollectionCard {...item} />
-                        )
-                    })
-                }
+      {/* CARDS SECTION */}
+      <div className=" grid grid-cols-3">
+        {Collections.map((item, i) => (
+          <CollectionCard key={i} {...item} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-            </div>
-
-        </div>
-    )
-}
-
-export default CollectionSection
+export default CollectionSection;

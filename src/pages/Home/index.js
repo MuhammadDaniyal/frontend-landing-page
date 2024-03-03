@@ -4,15 +4,17 @@ import Navbar from "../../components/shared/Navbar";
 import BannerSection from "../../components/Home/banner/BannerSection";
 import CollectionSection from "../../components/Home/Collections/CollectionSection";
 import BestSellingSection from "../../components/Home/BestSellings/BestSellingSection";
+import BlogSection from "../../components/Home/blogs/BlogSection";
 
 const index = () => {
   return (
     <>
       <Navbar />
       <HeroSection />
-      <BannerSection />
       <CollectionSection />
       <BestSellingSection />
+      <BannerSection />
+      <BlogSection />
     </>
   );
 };
