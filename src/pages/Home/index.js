@@ -13,8 +13,8 @@ import TestinomialSection from "../../components/Home/Testinomials/TestinomialSe
 const index = () => {
   return (
     <>
-      {/* <Navbar />
-      <HeroSection /> */}
+      <Navbar />
+      <HeroSection />
       <CollectionSection />
       <BestSellingSection />
       <BannerSection />
