@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <div
       id="carouselExampleAutoplaying"
-      className="carousel slide h-[76vh]"
+      className="carousel slide h-screen"
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators gap-2">

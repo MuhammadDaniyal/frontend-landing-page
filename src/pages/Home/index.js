@@ -6,6 +6,7 @@ import CollectionSection from "../../components/Home/Collections/CollectionSecti
 import BestSellingSection from "../../components/Home/BestSellings/BestSellingSection";
 import BlogSection from "../../components/Home/blogs/BlogSection";
 import Footer from "../../components/shared/Footer";
+import ArticleSection from "../../components/Home/artictles/ArticleSection";
 
 const index = () => {
   return (
@@ -15,6 +16,7 @@ const index = () => {
       <CollectionSection />
       <BestSellingSection />
       <BannerSection />
+      <ArticleSection />
       <BlogSection />
       <Footer />
     </>

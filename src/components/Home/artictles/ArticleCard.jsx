@@ -1,6 +1,6 @@
 import React from "react";
 
-const SellingCard = ({ img, title }) => {
+const ArticleCard = ({ img, title }) => {
   return (
     <div className="flex flex-col gap-2 justify-start items-center">
       <img src={img} alt="img" className=" w-full h-60" />
@@ -10,4 +10,4 @@ const SellingCard = ({ img, title }) => {
   );
 };
 
-export default SellingCard;
+export default ArticleCard;

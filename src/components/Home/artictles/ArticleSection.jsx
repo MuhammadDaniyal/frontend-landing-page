@@ -1,8 +1,8 @@
 import React from "react";
-import BlogCard from "./BlogCard";
-import { blogs } from "../../../data/Blogs";
+import ArticleCard from "./ArticleCard";
+import { articles } from "../../../data/articles";
 
-const BlogSection = () => {
+const ArticleSection = () => {
   return (
     <div className=" flex flex-col justify-center items-center gap-8 px-20 my-20">
       {/* HEADINGS SECTION */}
@@ -15,12 +15,12 @@ const BlogSection = () => {
 
       {/* CARDS SECTION */}
       <div className=" grid grid-cols-4 gap-10">
-        {blogs.map((item, i) => (
-          <BlogCard key={i} {...item} />
+        {articles.map((item, i) => (
+          <ArticleCard key={i} {...item} />
         ))}
       </div>
     </div>
   );
 };
 
-export default BlogSection;
+export default ArticleSection;

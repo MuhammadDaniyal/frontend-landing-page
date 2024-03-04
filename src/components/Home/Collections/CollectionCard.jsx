@@ -1,5 +1,4 @@
 import React from "react";
-import bridalSet from "../../../assets/images/collections/bridal_set.jpg";
 
 const CollectionCard = ({ title, img }) => {
   return (
