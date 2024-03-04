@@ -1,6 +1,7 @@
 import React from "react";
 import CollectionCard from "./CollectionCard";
 import { Collections } from "../../../data/Collections";
+import MainBtn from "../../shared/MainBtn";
 
 const CollectionSection = () => {
   return (
@@ -20,6 +21,9 @@ const CollectionSection = () => {
         {Collections.map((item, i) => (
           <CollectionCard key={i} {...item} />
         ))}
+      </div>
+      <div className=" flex justify-center items-center">
+      <MainBtn />
       </div>
     </div>
   );
