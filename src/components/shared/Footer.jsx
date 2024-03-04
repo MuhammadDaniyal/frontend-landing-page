@@ -4,10 +4,57 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <div className=' flex flex-col gap-5 bg-[#614605] py-4'>
+      <div className=' flex flex-col gap-5 bg-[#614605] py-10 md:py-4'>
+
+        {/* MOBILE */}
+
+        <div className=' flex flex-col gap-5 md:hidden px-3'>
+
+          <div className=' flex justify-start items-center gap-3 text-white'>
+            <h3 className=' capitalize'>follow us:</h3>
+            <div className=' flex gap-3'>
+              <div className=' rounded-[50%] p-2 bg-white'>
+                <FaFacebookF className='text-primaryColor' />
+              </div>
+              <div className=' rounded-[50%] p-2 bg-white'>
+                <FaTwitter className='text-primaryColor' />
+              </div>
+              <div className=' rounded-[50%] p-2 bg-white'>
+                <FaInstagram className='text-primaryColor' />
+              </div>
+            </div>
+          </div>
+
+          <div className=' flex flex-col gap-3'>
+
+            <div className=' flex justify-between text-white'>
+              <p className=' capitalize text-[19px]'>get in touch with us</p>
+              <span className=' text-4xl'>+</span>
+            </div>
+
+            <div className=' flex justify-between text-white'>
+              <p className=' capitalize text-[19px]'>information</p>
+              <span className=' text-4xl'>+</span>
+            </div>
+
+            <div className=' flex justify-between text-white'>
+              <p className=' capitalize text-[19px]'>our resources</p>
+              <span className=' text-4xl'>+</span>
+            </div>
+
+            <div className=' flex justify-between text-white'>
+              <p className=' capitalize text-[19px]'>about us</p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        {/* DESKTOP */}
 
         {/* first div */}
-        <div className='flex gap-40 text-white pl-16 pt-10'>
+        <div className=' hidden md:flex gap-40 text-white pl-16 pt-10'>
 
           {/* 1st */}
           <div className=' flex flex-col gap-5'>
@@ -67,7 +114,7 @@ const Footer = () => {
 
         </div>
 
-        {/* second div */}
+        {/* second div (same for both) */}
         <div className='flex flex-col gap-3 justify-center items-start'>
           <hr className=' w-full text-[#707070]' />
           <div className=' pl-10'>
@@ -75,7 +122,6 @@ const Footer = () => {
           </div>
 
         </div>
-
 
       </div>
     </>
