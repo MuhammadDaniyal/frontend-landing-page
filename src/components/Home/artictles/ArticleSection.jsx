@@ -1,6 +1,7 @@
 import React from "react";
 import ArticleCard from "./ArticleCard";
 import { articles } from "../../../data/articles";
+import MainBtn from "../../shared/MainBtn"
 
 const ArticleSection = () => {
   return (
@@ -17,7 +18,10 @@ const ArticleSection = () => {
       <div className=" grid grid-cols-4 gap-10">
         {articles.map((item, i) => (
           <ArticleCard key={i} {...item} />
-        ))}
+        ))}pmain
+      </div>
+      <div>
+        <MainBtn/>
       </div>
     </div>
   );
