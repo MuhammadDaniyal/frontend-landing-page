@@ -8,15 +8,17 @@ import BlogSection from "../../components/Home/blogs/BlogSection";
 import Footer from "../../components/shared/Footer";
 import ArticleSection from "../../components/Home/artictles/ArticleSection";
 import ShopSection from "../../components/Home/shop/ShopSection";
+import TestinomialSection from "../../components/Home/Testinomials/TestinomialSection";
 
 const index = () => {
   return (
     <>
-      <Navbar />
-      <HeroSection />
+      {/* <Navbar />
+      <HeroSection /> */}
       <CollectionSection />
       <BestSellingSection />
       <BannerSection />
+      <TestinomialSection />
       <ArticleSection />
       <ShopSection />
       <BlogSection />

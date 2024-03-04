@@ -1,6 +1,7 @@
 import React from "react";
 import carousel1 from "../../../assets/images/carousel/carousel-1.png";
 import carousel2 from "../../../assets/images/carousel/carousel-2.png";
+import MainBtn from "../../shared/MainBtn";
 
 const HeroSection = () => {
   return (
@@ -46,7 +47,7 @@ const HeroSection = () => {
             <p className=" text-xl font-extralight">
               Our full range of Asian ,Indian and Pakistani Bridal Jewellery
             </p>
-            <button>View Collection</button>
+            <MainBtn />
           </div>
         </div>
         <div className="carousel-item relative h-full">
@@ -58,7 +59,7 @@ const HeroSection = () => {
             <p className=" text-xl font-extralight">
               Our full range of Asian ,Indian and Pakistani Bridal Jewellery
             </p>
-            <button>View Collection</button>
+            <MainBtn />
           </div>
         </div>
         <div className="carousel-item relative h-full">
