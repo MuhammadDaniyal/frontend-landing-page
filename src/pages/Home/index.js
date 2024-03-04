@@ -7,6 +7,7 @@ import BestSellingSection from "../../components/Home/BestSellings/BestSellingSe
 import BlogSection from "../../components/Home/blogs/BlogSection";
 import Footer from "../../components/shared/Footer";
 import ArticleSection from "../../components/Home/artictles/ArticleSection";
+import ShopSection from "../../components/Home/shop/ShopSection";
 
 const index = () => {
   return (
@@ -17,6 +18,7 @@ const index = () => {
       <BestSellingSection />
       <BannerSection />
       <ArticleSection />
+      <ShopSection />
       <BlogSection />
       <Footer />
     </>

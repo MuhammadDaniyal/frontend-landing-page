@@ -2,22 +2,71 @@ import React from "react";
 import ArticleCard from "./ArticleCard";
 import { articles } from "../../../data/articles";
 
+const articleJewwllaryNames = [
+  {
+    id: 1,
+    title: "BRIDAL SET",
+  },
+  {
+    id: 2,
+    title: "NECKLACE SET",
+  },
+  {
+    id: 3,
+    title: "RINGS",
+  },
+  {
+    id: 4,
+    title: "EARINGS",
+  },
+  {
+    id: 5,
+    title: "EARINGS TIKKA SET",
+  },
+  {
+    id: 2,
+    title: "TIKKA",
+  },
+  {
+    id: 6,
+    title: "JUMMAR",
+  },
+  {
+    id: 7,
+    title: "AMERICAN DIAMOND",
+  },
+];
+
 const ArticleSection = () => {
   return (
-    <div className=" flex flex-col justify-center items-center gap-8 px-20 my-20">
+    <div className=" flex flex-col justify-center items-center gap-8 md:px-[60px] px-[16px] my-20">
       {/* HEADINGS SECTION */}
       <div className=" flex flex-col gap-1 text-center">
-        <h4 className=" text-base text-primaryColor uppercase">News & BLOGS</h4>
-        <h3 className=" text-4xl text-headingColor capitalize">
+        <h4 className=" md:text-base text-sm text-primaryColor uppercase">News & BLOGS</h4>
+        <h3 className="md:text-4xl text-2xl text-headingColor capitalize">
           Jewelery Articles
         </h3>
       </div>
 
+      <div className=" w-[100%] flex items-center gap-4 mx-auto overflow-x-auto whitespace-nowrap scrollbarHide">
+        {articleJewwllaryNames.map((item, i) => (
+          <button
+            className={` px-3 py-[10px] rounded-md text-xl font-medium tracking-wide artileNameBtn transition-all duration-200 ease-in-out transform-gpu ${
+              item.id === 1 && "bg-[#BD9229] text-white"
+            }`}
+          >
+            {item.title}
+          </button>
+        ))}
+      </div>
+
       {/* CARDS SECTION */}
-      <div className=" grid grid-cols-4 gap-10">
+      <div className=" flex w-full overflow-x-auto whitespace-nowrap scrollbarHide">
+        <div className="md:grid md:grid-cols-4 flex md:gap-2">
         {articles.map((item, i) => (
           <ArticleCard key={i} {...item} />
         ))}
+      </div>
       </div>
     </div>
   );

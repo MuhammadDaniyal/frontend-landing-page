@@ -4,5 +4,43 @@
 
 body {
   font-family: "Times New Roman", Times, serif;
-  background-color: #F6F5F0 !important;
+  background-color: #f6f5f0 !important;
+}
+
+.scrollbarHide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbarHide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.artileNameBtn {
+  border: 1px solid #bd9229;
+  color: #bd9229;
+}
+.artileNameBtn:hover {
+  background-color: #bd9229;
+  color: white;
+}
+
+.secondaryBtnTop {
+  border: 1px solid white;
+}
+.secondaryBtnTopInner:hover .secondaryBtnTop{
+  border: 1px solid #bd9229 !important;
+}
+
+.secondaryBtnTopInner {
+  background-color: #fff;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.secondaryBtnTopInner:hover {
+  top: 0;
+  left: 0;
+  background-color: #bd9229;
 }
