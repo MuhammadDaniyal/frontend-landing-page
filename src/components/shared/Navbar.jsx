@@ -14,12 +14,17 @@ const navLinks = [
   {
     id: 2,
     title: "Necklace Sets",
-    sublinks: ["All Necklace Sets", "Polki Sets", "Reverse AD Sets", "Kundan Sets"]
+    sublinks: [
+      "All Necklace Sets",
+      "Polki Sets",
+      "Reverse AD Sets",
+      "Kundan Sets",
+    ],
   },
   {
     id: 3,
     title: "American Diamond",
-    sublinks: ["Necklace Sets", "Earrings", "Rings", "Tikka", "Bangles"]
+    sublinks: ["Necklace Sets", "Earrings", "Rings", "Tikka", "Bangles"],
   },
   {
     id: 4,
@@ -28,7 +33,14 @@ const navLinks = [
   {
     id: 5,
     title: "Bangles",
-    sublinks: ["Stone Bangles", "Polki Bangles", "Gold Polish", "Choora Sets", "Mehendi Bangles", "Plain Bangles"]
+    sublinks: [
+      "Stone Bangles",
+      "Polki Bangles",
+      "Gold Polish",
+      "Choora Sets",
+      "Mehendi Bangles",
+      "Plain Bangles",
+    ],
   },
   {
     id: 6,
@@ -39,7 +51,7 @@ const navLinks = [
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [hoveredLinkId, setHoveredLinkId] = useState(null);
-  const [subLinks, setSubLinks] = useState([]);
+  const [subLinks, setSubLinks] = useState();
 
   const handleMouseEnter = (id) => {
     setHoveredLinkId(id);
@@ -50,11 +62,12 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const sub = navLinks.filter((item) => item.id === hoveredLinkId && hoveredLinkId);
-    console.log(sub);
-    setSubLinks(sub.sublinks)
-  }, [hoveredLinkId])
-
+    const sub = navLinks.filter(
+      (item) => item.id === hoveredLinkId && hoveredLinkId
+    );
+    console.log(sub[0]?.sublinks);
+    setSubLinks(sub[0]?.sublinks);
+  }, [hoveredLinkId]);
 
   return (
     <>
@@ -66,8 +79,8 @@ const Navbar = () => {
           style={{ background: "white" }}
         >
           <img src={logo} alt="logo" className="" />
-          <div className=" flex flex-col items-center justify-center gap-4 mt-2 w-full">
-            <div className=" flex w-full">
+          <div className=" flex flex-col items-center justify-center gap-4 mt-[26px] w-full">
+            <div className=" flex w-full ">
               <div className=" w-4/5 flex justify-center">
                 <div className=" flex  border rounded-3xl h-9  pl-4">
                   <input
@@ -85,45 +98,72 @@ const Navbar = () => {
                 <FiShoppingCart className=" text-3xl text-primaryColor" />
               </div>
             </div>
-            <hr className="w-full" />
-            <ul className=" w-full flex justify-between items-center xl:px-10 md:px-4">
+            <ul
+              className=" w-full flex justify-between items-center py-[10px] xl:px-10 md:px-4"
+              style={{
+                borderTop: "1px solid #EDEDED",
+                borderBottom: "1px solid #EDEDED",
+              }}
+            >
               {navLinks.map((item, i) => (
-                <li key={i} className=" xl:text-xl md:text-base cursor-pointer" onMouseEnter={() => handleMouseEnter(item.id)} onMouseLeave={handleMouseLeave}>
+                <li
+                  key={i}
+                  className=" xl:text-lg md:text-base cursor-pointer transition-all duration-200 ease-in-out transform-gpu"
+                  style={{
+                    borderBottom:
+                      subLinks &&
+                      hoveredLinkId === item.id &&
+                      "2px solid #BD9229",
+                  }}
+                  onMouseEnter={() => handleMouseEnter(item.id)}
+                >
                   {item.title}
                 </li>
               ))}
               <button
-                className={`px-3 py-[10px] rounded-md xl:text-xl md:text-base font-medium tracking-wide artileNameBtn transition-all duration-200 ease-in-out transform-gpu`}
+                className={`px-3 py-2 rounded-md xl:text-lg md:text-base font-medium tracking-wide artileNameBtn transition-all duration-200 ease-in-out transform-gpu`}
               >
                 More Collection
               </button>
             </ul>
           </div>
         </nav>
-        {hoveredLinkId &&
-          <div className="absolute z-50 bg-[#fff] w-full h-11 py-2">
-            <ul className=" flex justify-center items-center gap-16">
-              {
-                subLinks && subLinks.map((item, i) => {
+        {subLinks && (
+          <div
+            className={`${
+              subLinks ? " opacity-[1]" : "opacity-[0]"
+            } absolute z-50 bg-[#fff] w-full h-10 pt-[10px] pb-1 transition-opacity duration-200 ease-in-out transform-gpu`}
+            onMouseLeave={handleMouseLeave}
+          >
+            <ul className=" flex justify-center items-center gap-16 ">
+              {subLinks &&
+                subLinks?.map((item, i) => {
                   return (
-                    <li key={i} className=" text-[#000]">{item}</li>
-                  )
-                })
-              }
+                    <li
+                      key={i}
+                      className=" text-headingColor xl:text-sm md:text-[13px] cursor-pointer"
+                    >
+                      {item}
+                    </li>
+                  );
+                })}
             </ul>
-          </div>}
+          </div>
+        )}
       </header>
-
 
       {/* Mobile */}
       <header className="block md:hidden">
         <div className=" h-9 bg-primaryColor flex items-center">
-          <span className=" px-3 text-white text-sm tracking-wide font-light">Delivery Accross UK</span>
+          <span className=" px-3 text-white text-sm tracking-wide font-light">
+            Delivery Accross UK
+          </span>
         </div>
         <nav className=" absolute z-50 w-full bg-white  flex justify-between items-center px-4">
           <div
-            className={` ${isMobileOpen ? "hidden" : "flex"
-              }  justify-between w-full py-3`}
+            className={` ${
+              isMobileOpen ? "hidden" : "flex"
+            }  justify-between w-full py-3`}
           >
             <FiMenu
               className=" text-3xl text-primaryColor"
@@ -132,8 +172,9 @@ const Navbar = () => {
             <FiShoppingCart className=" text-3xl text-primaryColor" />
           </div>
           <div
-            className={` ${isMobileOpen ? "flex" : "hidden"
-              }  justify-between w-full py-3`}
+            className={` ${
+              isMobileOpen ? "flex" : "hidden"
+            }  justify-between w-full py-3`}
           >
             <div className=" flex flex-col w-full gap-3">
               <div className="flex justify-between w-full">
