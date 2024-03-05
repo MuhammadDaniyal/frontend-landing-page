@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <div
       id="carouselExampleAutoplaying"
-      className="carousel slide md:h-screen h-[90vh]"
+      className="carousel slide md:h-screen h-[95vh]"
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators gap-2">
@@ -75,7 +75,7 @@ const HeroSection = () => {
             <p className="md:text-xl text-base font-extralight">
               Our full range of Asian ,Indian and Pakistani Bridal Jewellery
             </p>
-            <button>View Collection</button>
+            <MainBtn />
           </div>
         </div>
       </div>

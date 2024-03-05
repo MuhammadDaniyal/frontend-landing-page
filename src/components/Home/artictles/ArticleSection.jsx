@@ -25,16 +25,20 @@ const articleJewwllaryNames = [
     title: "EARINGS TIKKA SET",
   },
   {
-    id: 2,
+    id: 6,
     title: "TIKKA",
   },
   {
-    id: 6,
+    id: 7,
     title: "JUMMAR",
   },
   {
-    id: 7,
+    id: 8,
     title: "AMERICAN DIAMOND",
+  },
+  {
+    id: 9,
+    title: "TIKKA",
   },
 ];
 
@@ -54,7 +58,7 @@ const ArticleSection = () => {
       <div className=" w-[100%] flex items-center gap-4 mx-auto overflow-x-auto whitespace-nowrap scrollbarHide">
         {articleJewwllaryNames.map((item, i) => (
           <button
-            className={` px-3 py-[10px] rounded-md text-xl font-medium tracking-wide artileNameBtn transition-all duration-200 ease-in-out transform-gpu ${
+            className={` px-3 py-[10px] rounded-md text-base font-medium tracking-wide artileNameBtn transition-all duration-200 ease-in-out transform-gpu ${
               item.id === 1 && "bg-[#BD9229] text-white"
             }`}
           >
