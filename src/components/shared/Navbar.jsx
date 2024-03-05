@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/images/logo.png";
 import { GoPerson } from "react-icons/go";
 import { FiShoppingCart } from "react-icons/fi";
@@ -14,10 +14,12 @@ const navLinks = [
   {
     id: 2,
     title: "Necklace Sets",
+    sublinks: ["All Necklace Sets", "Polki Sets", "Reverse AD Sets", "Kundan Sets"]
   },
   {
     id: 3,
     title: "American Diamond",
+    sublinks: ["Necklace Sets", "Earrings", "Rings", "Tikka", "Bangles"]
   },
   {
     id: 4,
@@ -26,6 +28,7 @@ const navLinks = [
   {
     id: 5,
     title: "Bangles",
+    sublinks: ["Stone Bangles", "Polki Bangles", "Gold Polish", "Choora Sets", "Mehendi Bangles", "Plain Bangles"]
   },
   {
     id: 6,
@@ -35,6 +38,24 @@ const navLinks = [
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [hoveredLinkId, setHoveredLinkId] = useState(null);
+  const [subLinks, setSubLinks] = useState([]);
+
+  const handleMouseEnter = (id) => {
+    setHoveredLinkId(id);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredLinkId(null);
+  };
+
+  useEffect(() => {
+    const sub = navLinks.filter((item) => item.id === hoveredLinkId && hoveredLinkId);
+    console.log(sub);
+    setSubLinks(sub.sublinks)
+  }, [hoveredLinkId])
+
+
   return (
     <>
       {/* DESKTOP */}
@@ -64,21 +85,36 @@ const Navbar = () => {
                 <FiShoppingCart className=" text-3xl text-primaryColor" />
               </div>
             </div>
+            <hr className="w-full" />
             <ul className=" w-full flex justify-between items-center xl:px-10 md:px-4">
               {navLinks.map((item, i) => (
-                <li key={i} className=" xl:text-xl md:text-base cursor-pointer">
+                <li key={i} className=" xl:text-xl md:text-base cursor-pointer" onMouseEnter={() => handleMouseEnter(item.id)} onMouseLeave={handleMouseLeave}>
                   {item.title}
                 </li>
               ))}
               <button
-                className={` px-3 py-[10px] rounded-md xl:text-xl md:text-base font-medium tracking-wide artileNameBtn transition-all duration-200 ease-in-out transform-gpu`}
+                className={`px-3 py-[10px] rounded-md xl:text-xl md:text-base font-medium tracking-wide artileNameBtn transition-all duration-200 ease-in-out transform-gpu`}
               >
                 More Collection
               </button>
             </ul>
           </div>
         </nav>
+        {hoveredLinkId &&
+          <div className="absolute z-50 bg-[#fff] w-full h-11 py-2">
+            <ul className=" flex justify-center items-center gap-16">
+              {
+                subLinks && subLinks.map((item, i) => {
+                  return (
+                    <li key={i} className=" text-[#000]">{item}</li>
+                  )
+                })
+              }
+            </ul>
+          </div>}
       </header>
+
+
       {/* Mobile */}
       <header className="block md:hidden">
         <div className=" h-9 bg-primaryColor flex items-center">
@@ -86,9 +122,8 @@ const Navbar = () => {
         </div>
         <nav className=" absolute z-50 w-full bg-white  flex justify-between items-center px-4">
           <div
-            className={` ${
-              isMobileOpen ? "hidden" : "flex"
-            }  justify-between w-full py-3`}
+            className={` ${isMobileOpen ? "hidden" : "flex"
+              }  justify-between w-full py-3`}
           >
             <FiMenu
               className=" text-3xl text-primaryColor"
@@ -97,9 +132,8 @@ const Navbar = () => {
             <FiShoppingCart className=" text-3xl text-primaryColor" />
           </div>
           <div
-            className={` ${
-              isMobileOpen ? "flex" : "hidden"
-            }  justify-between w-full py-3`}
+            className={` ${isMobileOpen ? "flex" : "hidden"
+              }  justify-between w-full py-3`}
           >
             <div className=" flex flex-col w-full gap-3">
               <div className="flex justify-between w-full">
