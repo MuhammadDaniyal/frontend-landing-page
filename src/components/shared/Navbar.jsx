@@ -108,13 +108,13 @@ const Navbar = () => {
               {navLinks.map((item, i) => (
                 <li
                   key={i}
-                  className=" xl:text-lg md:text-base cursor-pointer transition-all duration-200 ease-in-out transform-gpu"
-                  style={{
-                    borderBottom:
-                      subLinks &&
-                      hoveredLinkId === item.id &&
-                      "2px solid #BD9229",
-                  }}
+                  className=" xl:text-lg md:text-base cursor-pointer transition-all duration-200 ease-in-out transform-gpu borderNavlinks"
+                  // style={{
+                  //   borderBottom:
+                  //     subLinks &&
+                  //     hoveredLinkId === item.id &&
+                  //     "2px solid #BD9229",
+                  // }}
                   onMouseEnter={() => handleMouseEnter(item.id)}
                 >
                   {item.title}
@@ -141,7 +141,7 @@ const Navbar = () => {
                   return (
                     <li
                       key={i}
-                      className=" text-headingColor xl:text-sm md:text-[13px] cursor-pointer"
+                      className=" text-headingColor xl:text-sm md:text-[13px] cursor-pointer sublinksHover"
                     >
                       {item}
                     </li>
