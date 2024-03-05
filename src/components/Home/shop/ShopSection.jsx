@@ -7,7 +7,7 @@ const ShopSection = () => {
     <div className=" flex w-full overflow-x-auto scrollbarHide">
       <div className=" md:grid md:grid-cols-3 flex md:gap-10 gap-4 md:px-20">
         {shops.map((item, i) => (
-          <div className={` relative md:w-full w-screen h-48`}>
+          <div className={` relative md:w-full w-screen xl:h-48 md:h-44`}>
             <img
               src={item.img}
               alt="img1"

@@ -14,7 +14,7 @@ const TestinomialSection = () => {
         </h3>
 
         {/* 2nd DIV */}
-        <div className=" flex justify-between items-center w-full md:px-[40px] px-2">
+        <div className=" flex justify-between items-center w-full xl:px-14 md:px-10 px-2">
           {/* LEFT ARROW */}
           <div className=" rounded-[50%] md:px-[20px] md:py-[20px] py-[4px] px-[10px] border border-black">
             <img src={arrowLeft} alt="" className=" md:w-8 w-16 h-8" />

@@ -2,7 +2,7 @@ import React from "react";
 
 const BlogCard = ({ img, date, description }) => {
   return (
-    <div className=" flex flex-col gap-2 justify-start items-center md:w-full w-80 md:px-0 px-4">
+    <div className=" flex flex-col gap-2 justify-start items-center md:w-full w-80 xl:px-4 md:px-3 px-3">
       <img
         src={img}
         alt="img"

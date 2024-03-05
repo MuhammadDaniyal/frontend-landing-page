@@ -64,14 +64,14 @@ const Navbar = () => {
                 <FiShoppingCart className=" text-3xl text-primaryColor" />
               </div>
             </div>
-            <ul className=" w-full flex justify-between items-center px-10">
+            <ul className=" w-full flex justify-between items-center xl:px-10 md:px-4">
               {navLinks.map((item, i) => (
-                <li key={i} className=" text-xl cursor-pointer">
+                <li key={i} className=" xl:text-xl md:text-base cursor-pointer">
                   {item.title}
                 </li>
               ))}
               <button
-                className={` px-3 py-[10px] rounded-md text-xl font-medium tracking-wide artileNameBtn transition-all duration-200 ease-in-out transform-gpu`}
+                className={` px-3 py-[10px] rounded-md xl:text-xl md:text-base font-medium tracking-wide artileNameBtn transition-all duration-200 ease-in-out transform-gpu`}
               >
                 More Collection
               </button>

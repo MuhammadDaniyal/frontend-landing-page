@@ -16,7 +16,7 @@ const BannerSection = () => {
         </p>
         <SecondaryBtn />
       </div>
-      <div className=" absolute md:w-1/2 w-4/5 md:h-[400px] h-56 md:right-0 right-[10%] md:top-12 top-0 flex ">
+      <div className=" md:w-1/2 w-4/5 md:h-[400px] h-56 md:right-0 right-[10%] bannerImg flex ">
         <img src={banner1} alt="banner1" className="w-full" />
       </div>
     </section>
