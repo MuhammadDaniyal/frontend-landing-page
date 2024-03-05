@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <div
       id="carouselExampleAutoplaying"
-      className="carousel slide h-screen"
+      className="carousel slide md:h-screen h-[90vh]"
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators gap-2">
@@ -39,36 +39,40 @@ const HeroSection = () => {
       </div>
       <div className="carousel-inner h-full">
         <div className="carousel-item active relative h-full">
-          <img src={carousel1} className=" absolute" alt="carousel1" />
-          <div className=" relative flex flex-col gap-4 justify-center items-center text-white h-full">
-            <h2 className=" text-5xl font-medium">
+          <img
+            src={carousel1}
+            className=" absolute h-full object-cover"
+            alt="carousel1"
+          />
+          <div className=" relative w-full flex flex-col gap-4 justify-center items-center text-white h-full text-center md:px-0 px-4">
+            <h2 className=" md:text-5xl text-3xl font-medium leading-snug">
               Happiness comes in the boxof Jewellery
             </h2>
-            <p className=" text-xl font-extralight">
+            <p className=" md:text-xl text-base font-extralight">
               Our full range of Asian ,Indian and Pakistani Bridal Jewellery
             </p>
             <MainBtn />
           </div>
         </div>
         <div className="carousel-item relative h-full">
-          <img src={carousel2} className=" absolute" alt="carousel1" />
-          <div className=" relative flex flex-col gap-4 justify-center items-center text-white h-full">
-            <h2 className=" text-5xl font-medium">
+          <img src={carousel2} className=" absolute h-full object-cover" alt="carousel1" />
+          <div className="  relative w-full flex flex-col gap-4 justify-center items-center text-white h-full text-center md:px-0 px-4">
+            <h2 className="md:text-5xl text-3xl font-medium">
               Happiness comes in the boxof Jewellery
             </h2>
-            <p className=" text-xl font-extralight">
+            <p className="md:text-xl text-base font-extralight">
               Our full range of Asian ,Indian and Pakistani Bridal Jewellery
             </p>
             <MainBtn />
           </div>
         </div>
         <div className="carousel-item relative h-full">
-          <img src={carousel1} className=" absolute" alt="carousel1" />
-          <div className=" relative flex flex-col gap-4 justify-center items-center text-white h-full">
-            <h2 className=" text-5xl font-medium">
+          <img src={carousel1} className=" absolute h-full object-cover" alt="carousel1" />
+          <div className="  relative w-full flex flex-col gap-4 justify-center items-center text-white h-full text-center md:px-0 px-4">
+            <h2 className="md:text-5xl text-3xl font-medium">
               Happiness comes in the boxof Jewellery
             </h2>
-            <p className=" text-xl font-extralight">
+            <p className="md:text-xl text-base font-extralight">
               Our full range of Asian ,Indian and Pakistani Bridal Jewellery
             </p>
             <button>View Collection</button>
