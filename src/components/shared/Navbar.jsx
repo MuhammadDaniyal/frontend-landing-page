@@ -200,11 +200,11 @@ const Navbar = () => {
                         setOpenSubLinks((prev) => !prev)
                       }} />
                     </li>
-                    {openSubLinks &&
+                    {openSubLinks && subLinks && (item.id === hoveredLinkId) &&
                       <div className=" ml-5">
                         <ul className="flex flex-col justify-center items-start gap-[10px]">
                           {
-                            (item.id === hoveredLinkId) && subLinks && subLinks.map((item, i) => (
+                            subLinks && subLinks.map((item, i) => (
                               <li key={i} className="text-headingColor text-xs xl:text-sm md:text-[13px] cursor-pointer">{item}</li>
                             ))
                           }
