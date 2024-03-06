@@ -73,7 +73,7 @@ const Navbar = () => {
   return (
     <>
       {/* DESKTOP */}
-      <header className="md:block hidden h-48">
+      <header className="md:block hidden h-48 sticky top-0 bg-white z-50">
         <div className=" h-1/5 bg-primaryColor"></div>
         <nav
           className=" h-4/5 flex w-full px-8"
@@ -153,7 +153,7 @@ const Navbar = () => {
       </header>
 
       {/* Mobile */}
-      <header className="block md:hidden">
+      <header className="block md:hidden sticky top-0 bg-white z-50">
         <div className=" h-9 bg-primaryColor flex items-center">
           <span className=" px-3 text-white text-sm tracking-wide font-light">
             Delivery Accross UK
