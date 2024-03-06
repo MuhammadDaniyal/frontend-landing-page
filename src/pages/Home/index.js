@@ -9,6 +9,7 @@ import Footer from "../../components/shared/Footer";
 import ArticleSection from "../../components/Home/artictles/ArticleSection";
 import ShopSection from "../../components/Home/shop/ShopSection";
 import TestinomialSection from "../../components/Home/Testinomials/TestinomialSection";
+import Modal from "../../components/Home/User/Modal";
 
 const index = () => {
   return (
@@ -23,6 +24,7 @@ const index = () => {
       <ShopSection />
       <BlogSection />
       <Footer />
+      <Modal />
     </>
   );
 };

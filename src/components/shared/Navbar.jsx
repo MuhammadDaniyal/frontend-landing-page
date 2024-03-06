@@ -95,8 +95,8 @@ const Navbar = () => {
                 </div>
               </div>
               <div className=" w-1/5 flex gap-3 justify-center">
-                <GoPerson className=" text-3xl text-primaryColor" />
-                <FiShoppingCart className=" text-3xl text-primaryColor" />
+                <GoPerson className=" text-3xl text-primaryColor cursor-pointer" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
+                <FiShoppingCart className=" text-3xl text-primaryColor cursor-pointer" />
               </div>
             </div>
             <ul

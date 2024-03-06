@@ -21,6 +21,7 @@ body {
   border: 1px solid #bd9229;
   color: #bd9229;
 }
+
 .artileNameBtn:hover {
   background-color: #bd9229;
   color: white;
@@ -29,6 +30,7 @@ body {
 .secondaryBtnTop {
   border: 1px solid white;
 }
+
 .secondaryBtnTopInner:hover .secondaryBtnTop {
   border: 1px solid #bd9229 !important;
 }
@@ -39,6 +41,7 @@ body {
   top: 5px;
   left: 5px;
 }
+
 .secondaryBtnTopInner:hover {
   top: 0;
   left: 0;
@@ -85,4 +88,10 @@ body {
 
 .sublinksHover:hover {
   color: #bd9229 !important;
+}
+
+.modal-content {
+  border-radius: 0 !important;
+  outline: none;
+  border: none;
 }
