@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -25,21 +26,21 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className=' flex flex-col gap-3'>
+          <div className=' flex flex-col gap-4'>
 
             <div className=' flex justify-between text-white'>
               <p className=' capitalize text-[19px]'>get in touch with us</p>
-              <span className=' text-4xl'>+</span>
+              <FaPlus className=' text-2xl text-white' />
             </div>
 
-            <div className=' flex justify-between text-white'>
+            <div className=' flex justify-between items-center text-white'>
               <p className=' capitalize text-[19px]'>information</p>
-              <span className=' text-4xl'>+</span>
+              <FaPlus className=' text-2xl text-white' />
             </div>
 
             <div className=' flex justify-between text-white'>
               <p className=' capitalize text-[19px]'>our resources</p>
-              <span className=' text-4xl'>+</span>
+              <FaPlus className=' text-2xl text-white' />
             </div>
 
             <div className=' flex justify-between text-white'>

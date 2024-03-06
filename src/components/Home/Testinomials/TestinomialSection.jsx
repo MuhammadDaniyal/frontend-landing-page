@@ -16,7 +16,7 @@ const TestinomialSection = () => {
         {/* 2nd DIV */}
         <div className=" flex justify-between items-center w-full xl:px-14 md:px-10 px-2">
           {/* LEFT ARROW */}
-          <div className=" rounded-[50%] md:px-[20px] md:py-[20px] py-[4px] px-[10px] border border-black">
+          <div className=" rounded-[50%] md:px-[20px] md:py-[20px] py-[4px] px-[8px] border border-black">
             <img src={arrowLeft} alt="" className=" md:w-8 w-16 h-8" />
           </div>
 
@@ -51,7 +51,7 @@ const TestinomialSection = () => {
           </div>
 
           {/* RIGHT ARROW */}
-          <div className=" rounded-[50%] md:px-[20px] md:py-[20px] py-[4px] px-[10px] border border-black">
+          <div className=" rounded-[50%] md:px-[20px] md:py-[20px] py-[4px] px-[8px] border border-black">
             <img src={arrowRight} alt="" className=" md:w-8 w-16 h-8" />
           </div>
         </div>
