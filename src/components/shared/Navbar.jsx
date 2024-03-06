@@ -50,6 +50,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [openSubLinks, setOpenSubLinks] = useState(false);
   const [hoveredLinkId, setHoveredLinkId] = useState(null);
   const [subLinks, setSubLinks] = useState();
 
@@ -130,9 +131,8 @@ const Navbar = () => {
         </nav>
         {subLinks && (
           <div
-            className={`${
-              subLinks ? " opacity-[1]" : "opacity-[0]"
-            } absolute z-50 bg-[#fff] w-full h-10 pt-[10px] pb-1 transition-opacity duration-200 ease-in-out transform-gpu`}
+            className={`${subLinks ? " opacity-[1]" : "opacity-[0]"
+              } absolute z-50 bg-[#fff] w-full h-10 pt-[10px] pb-1 transition-opacity duration-200 ease-in-out transform-gpu`}
             onMouseLeave={handleMouseLeave}
           >
             <ul className=" flex justify-center items-center gap-16 ">
@@ -161,9 +161,8 @@ const Navbar = () => {
         </div>
         <nav className=" absolute z-50 w-full bg-white  flex justify-between items-center px-4">
           <div
-            className={` ${
-              isMobileOpen ? "hidden" : "flex"
-            }  justify-between w-full py-3`}
+            className={` ${isMobileOpen ? "hidden" : "flex"
+              }  justify-between w-full py-3`}
           >
             <FiMenu
               className=" text-3xl text-primaryColor"
@@ -172,9 +171,8 @@ const Navbar = () => {
             <FiShoppingCart className=" text-3xl text-primaryColor" />
           </div>
           <div
-            className={` ${
-              isMobileOpen ? "flex" : "hidden"
-            }  justify-between w-full py-3`}
+            className={` ${isMobileOpen ? "flex" : "hidden"
+              }  justify-between w-full py-3`}
           >
             <div className=" flex flex-col w-full gap-3">
               <div className="flex justify-between w-full">
@@ -192,12 +190,27 @@ const Navbar = () => {
               </div>
               <ul className="flex flex-col gap-[6px]">
                 {navLinks.map((item, i) => (
-                  <li key={i} className="flex justify-between w-full">
-                    <span className=" text-sm text-slate-500">
-                      {item.title}
-                    </span>
-                    <IoIosArrowForward className=" text-sm text-slate-500" />
-                  </li>
+                  <>
+                    <li key={i} className="flex justify-between w-full cursor-pointer">
+                      <span className=" text-sm text-slate-500">
+                        {item.title}
+                      </span>
+                      <IoIosArrowForward className=" text-sm text-slate-500" onClick={() => {
+                        setHoveredLinkId(item.id)
+                        setOpenSubLinks((prev) => !prev)
+                      }} />
+                    </li>
+                    {openSubLinks &&
+                      <div className=" ml-5">
+                        <ul className="flex flex-col justify-center items-start gap-[10px]">
+                          {
+                            (item.id === hoveredLinkId) && subLinks && subLinks.map((item, i) => (
+                              <li key={i} className="text-headingColor text-xs xl:text-sm md:text-[13px] cursor-pointer">{item}</li>
+                            ))
+                          }
+                        </ul>
+                      </div>}
+                  </>
                 ))}
               </ul>
             </div>
