@@ -191,14 +191,14 @@ const Navbar = () => {
               <ul className="flex flex-col gap-[6px]">
                 {navLinks.map((item, i) => (
                   <>
-                    <li key={i} className="flex justify-between w-full cursor-pointer">
+                    <li key={i} className="flex justify-between w-full cursor-pointer" onClick={() => {
+                      setHoveredLinkId(item.id)
+                      setOpenSubLinks((prev) => !prev)
+                    }}>
                       <span className=" text-sm text-slate-500">
                         {item.title}
                       </span>
-                      <IoIosArrowForward className=" text-sm text-slate-500" onClick={() => {
-                        setHoveredLinkId(item.id)
-                        setOpenSubLinks((prev) => !prev)
-                      }} />
+                      <IoIosArrowForward className=" text-sm text-slate-500" />
                     </li>
                     {openSubLinks && subLinks && (item.id === hoveredLinkId) &&
                       <div className=" ml-5">
