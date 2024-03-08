@@ -204,7 +204,10 @@ const Navbar = () => {
                       <span className=" text-sm text-slate-500">
                         {item.title}
                       </span>
-                      <IoIosArrowForward className=" text-sm text-slate-500" />
+                      {
+                        item.sublinks &&
+                        <IoIosArrowForward className=" text-sm text-slate-500" />
+                      }
                     </li>
                     {openSubLinks && subLinks && (item.id === hoveredLinkId) &&
                       <div className=" ml-5">
