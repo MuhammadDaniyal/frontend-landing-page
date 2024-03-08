@@ -96,7 +96,10 @@ const Navbar = () => {
               </div>
               <div className=" w-1/5 flex gap-3 justify-center">
                 <GoPerson className=" text-3xl text-primaryColor cursor-pointer" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
-                <FiShoppingCart className=" text-3xl text-primaryColor cursor-pointer" />
+                <div className="relative">
+                  <span className=" absolute -right-2 -top-2 text-center text-white text-sm bg-primaryColor rounded-[50%] py-[1px] px-[3px] ">10</span>
+                  <FiShoppingCart className=" text-3xl text-primaryColor" />
+                </div>
               </div>
             </div>
             <ul
@@ -168,7 +171,10 @@ const Navbar = () => {
               className=" text-3xl text-primaryColor"
               onClick={() => setIsMobileOpen((prev) => !prev)}
             />
-            <FiShoppingCart className=" text-3xl text-primaryColor" />
+            <div className="relative">
+              <span className=" absolute -right-2 -top-1 text-center text-white text-xs bg-primaryColor rounded-[50%] py-[1px] px-[3px] ">10</span>
+              <FiShoppingCart className=" text-3xl text-primaryColor" />
+            </div>
           </div>
           <div
             className={` ${isMobileOpen ? "flex" : "hidden"
