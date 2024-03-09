@@ -5,6 +5,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { IoSearch, IoClose } from "react-icons/io5";
 import { FiMenu } from "react-icons/fi";
 import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   {
@@ -79,7 +80,9 @@ const Navbar = () => {
           className=" h-4/5 flex w-full px-8"
           style={{ background: "white" }}
         >
-          <img src={logo} alt="logo" className="" />
+          <Link to={'/'}>
+            <img src={logo} alt="logo" className=" h-[165px]" />
+          </Link>
           <div className=" flex flex-col items-center justify-center gap-4 mt-[26px] w-full">
             <div className=" flex w-full ">
               <div className=" w-4/5 flex justify-center">
